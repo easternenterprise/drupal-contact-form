@@ -1,0 +1,5 @@
+name: Contact Form
+type: module
+description: 'The Contact Form which will be submitted by end user to connect with site administration.'
+package: Contact Form
+core_version_requirement: ^9 || ^8

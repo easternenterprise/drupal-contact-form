@@ -1,0 +1,48 @@
+<?php
+
+/**
+ *  @file contact form installation file.
+ *  create table contacts.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function contact_form_schema() {
+  $schema['contacts'] = [
+    'description' => 'Stores value in Contacts table.',
+    'fields' => [
+      'cid' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique id for contact submission.',
+      ],
+      'first_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+        'description' => 'Name First name of a person.',
+      ],
+      'last_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+        'description' => 'Store last name of a person',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+        'description' => 'Store email of a person',
+      ],
+      'message' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'Store Message provided by user.',
+      ],
+    ],
+    'primary key' => ['cid'],
+  ];
+ 
+  return $schema;
+}
